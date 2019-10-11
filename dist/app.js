@@ -24,10 +24,16 @@ function () {
     _classCallCheck(this, App);
 
     this.server = (0, _express["default"])();
+    this.middlewares();
     this.routes();
   }
 
   _createClass(App, [{
+    key: "middlewares",
+    value: function middlewares() {
+      this.server.use(_express["default"].json());
+    }
+  }, {
     key: "routes",
     value: function routes() {
       this.server.use(_routes2["default"]);

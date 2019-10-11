@@ -1,8 +1,8 @@
 import { Router } from 'express';
-
+import auth from './app/middlewares/auth';
 const router = Router();
 
-router.get('/', (req, res) => {
+router.get('/', auth, (req, res) => {
     res.send('is comming...');
 })
 
